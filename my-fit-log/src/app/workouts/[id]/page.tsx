@@ -21,7 +21,7 @@ const WorkoutDetails = async ({
   return (
     <main className="px-6 py-10">
       <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10">
-        {/* Left: Image */}
+        
         <div className="rounded-2xl overflow-hidden">
           <Image
             src={workout.image}
@@ -32,7 +32,7 @@ const WorkoutDetails = async ({
           />
         </div>
 
-        {/* Right: Details */}
+        
         <div>
           <h1 className=" `font-(family-name:--font-oswald)` text-3xl md:text-4xl font-bold uppercase text-white">
             {workout.name}
@@ -50,7 +50,7 @@ const WorkoutDetails = async ({
             ))}
           </div>
 
-          {/* Info card */}
+          
           <div className="mt-6 bg-[#15171d] rounded-xl overflow-hidden">
             {[
               ["Equipment", workout.equipment],
@@ -73,7 +73,7 @@ const WorkoutDetails = async ({
             ))}
           </div>
 
-          {/* Instructions */}
+          
           <div className="mt-6">
             <h2 className="font-bold text-white mb-3">INSTRUCTIONS</h2>
             <ol className="space-y-2 text-sm text-gray-300 list-decimal list-inside">
@@ -83,7 +83,7 @@ const WorkoutDetails = async ({
             </ol>
           </div>
 
-          {/* Buttons (client component) */}
+          
           <WorkoutActions workout={workout} />
         </div>
       </div>

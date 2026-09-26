@@ -50,7 +50,7 @@ const MyPlan = () => {
   return (
     <main className="px-6 py-10">
       <div className="mx-auto max-w-6xl">
-        {/* Title */}
+        
         <h1 className="`font-(family-name:--font-oswald)`text-3xl font-bold uppercase text-white">
           My Plan
         </h1>
@@ -58,7 +58,7 @@ const MyPlan = () => {
           Cap of five lifts for today. Finish them, then load more.
         </p>
 
-        {/* Metrics */}
+      
         <div className="mt-6 grid grid-cols-3 gap-4 bg-[#15171d] rounded-xl p-6">
           <div>
             <p className="text-xs text-gray-400">Exercises</p>
@@ -76,7 +76,7 @@ const MyPlan = () => {
           </div>
         </div>
 
-        {/* Tabs + Sort */}
+        
         <div className="mt-6 flex items-center justify-between">
           <div className="flex gap-2 bg-[#15171d] rounded-full p-1">
             <button
@@ -115,7 +115,7 @@ const MyPlan = () => {
           </div>
         </div>
 
-        {/* List / Empty state */}
+        
         <div className="mt-6 bg-[#15171d] rounded-xl p-6 `min-h-75`">
           {sortedList.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full py-16 text-center">

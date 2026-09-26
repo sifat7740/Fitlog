@@ -43,6 +43,7 @@ const WorkoutActions = ({ workout }: WorkoutActionsProps) => {
       <button
         onClick={handleAddToPlan}
         disabled={inPlan || planFull}
+         suppressHydrationWarning
         className="bg-[#ccff00] text-black px-5 py-3 rounded-lg font-bold text-sm disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#b8e600] transition"
       >
         + {inPlan ? "Added to plan" : "Add to today's plan"}
@@ -50,6 +51,7 @@ const WorkoutActions = ({ workout }: WorkoutActionsProps) => {
       <button
         onClick={handleSave}
         disabled={inSaved}
+         suppressHydrationWarning
         className="border border-gray-700 px-5 py-3 rounded-lg text-sm text-white disabled:opacity-40 disabled:cursor-not-allowed hover:border-gray-500 transition"
       >
         🔖 {inSaved ? "Saved" : "Save for later"}

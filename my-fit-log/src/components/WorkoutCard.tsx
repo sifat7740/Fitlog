@@ -12,7 +12,7 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
       href={`/workouts/${workout.id}`}
       className="block rounded-xl border border-gray-800 bg-[#15171d] p-3 transition hover:border-[#ccff00]/50"
     >
-      {/* Image */}
+      
       <div className="overflow-hidden rounded-lg">
         <Image
           src={workout.image}
@@ -23,7 +23,7 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
         />
       </div>
 
-      {/* Categories */}
+      
       <div className="mt-3 flex flex-wrap gap-2">
         {workout.muscleGroups.map((group) => (
           <span
@@ -35,11 +35,11 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
         ))}
       </div>
 
-      {/* Name */}
+      
       <h3 className="mt-3 text-base font-bold text-white">{workout.name}</h3>
       <p className="text-sm text-gray-400">{workout.equipment}</p>
 
-      {/* Stats */}
+      
       <div className="mt-3 flex items-center justify-between text-xs text-gray-400">
         <span>⏱ {workout.duration} min</span>
         <span>🔥 {workout.caloriesBurned} kcal</span>
