@@ -24,27 +24,42 @@ let idCounter = 0;
 export const ToastProvider = ({ children }: { children: ReactNode }) => {
   const [toasts, setToasts] = useState<Toast[]>([]);
 
-  const showToast = useCallback((message: string) => {
-    const id = idCounter++;
-    setToasts((prev) => [...prev, { id, message }]);
-
-    setTimeout(() => {
-      setToasts((prev) => prev.filter((t) => t.id !== id));
-    }, 3000);
+  const removeToast = useCallback((id: number) => {
+    setToasts((prev) => prev.filter((t) => t.id !== id));
   }, []);
+
+  const showToast = useCallback(
+    (message: string) => {
+      const id = idCounter++;
+      setToasts((prev) => [...prev, { id, message }]);
+
+      setTimeout(() => {
+        removeToast(id);
+      }, 3000);
+    },
+    [removeToast]
+  );
 
   return (
     <ToastContext.Provider value={{ showToast }}>
       {children}
 
       {/* Toast container */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-2">
+      <div className="fixed top-20 right-6 z-50 flex flex-col gap-3">
         {toasts.map((toast) => (
           <div
             key={toast.id}
-            className="bg-[#ccff00] text-black font-medium px-4 py-3 rounded-lg shadow-lg animate-fade-in text-sm"
+            className="flex items-center gap-3 bg-[#15171d] border border-[#ccff00]/30 text-white px-4 py-3 rounded-xl shadow-lg animate-fade-in text-sm `min-w-65`"
           >
-            {toast.message}
+            <span className="text-[#ccff00] text-lg">✓</span>
+            <span className="flex-1">{toast.message}</span>
+            <button
+              onClick={() => removeToast(toast.id)}
+              className="text-gray-400 hover:text-white text-lg leading-none"
+              aria-label="Close"
+            >
+              ×
+            </button>
           </div>
         ))}
       </div>

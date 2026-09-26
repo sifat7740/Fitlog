@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { usePlan } from "@/context/PlanContext";
+import Image from "next/image";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -14,9 +15,14 @@ const Navbar = () => {
       : "text-white px-4 py-1.5 text-sm font-medium hover:text-[#ccff00] transition";
 
   return (
-    <nav className="flex items-center justify-between px-6 py-4 border-b border-gray-800">
+    <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 border-b border-gray-800">
       <Link href="/" className="flex items-center gap-2">
-        <span className="text-[#ccff00] text-xl">⚡</span>
+        <Image
+                 src="/logo.png"
+                    alt=""
+                    height={25}
+                    width={25}
+                />
         <span className="text-white font-bold text-lg tracking-wide">
           FITLOG
         </span>
